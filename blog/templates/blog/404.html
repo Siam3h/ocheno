@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}
+{% block content%}
+<h1 class="font-weight-bold text-center text-info">Oops! Post Not Found</h1>
+<p class="font-weight-normal mb-50 text-center">Click the button below to be redirected to the first post or the title to visit the home-page</p>
+<a class="btn btn-outline-info mb-4" href="{% url 'post-detail' post.id|add:'1' %}">></a>
+{% endblock content%}
+

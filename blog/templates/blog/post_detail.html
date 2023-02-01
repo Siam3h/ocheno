@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content%}
+<article class="mb-4">
+    <h2 class="font-weight-bold text-center text-info">{{ object.title }}</h2>
+    <p class="date text-muted text-center">Posted on {{ object.date_posted |date:"F d, Y" }} | By {{ object.author }}</p>
+    <p class='font-italic font-weight-light'>
+        ***
+        {{ object.summary }}
+        ***
+    </p>
+    <p class="font-weight-normal">{{ object.content }}</p>
+</article>
+<div class="d-flex justify-content-between">
+    <a class="btn btn-outline-info mb-4" href="{% url 'post-detail' post.id|add:'-1' %}">Previous</a>
+    <a class="btn btn-outline-info mb-4" href="{% url 'post-detail' post.id|add:'1' %}">Next</a>
+</div>
+{% endblock content%}
